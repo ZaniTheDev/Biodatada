@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    font-size: clamp(14px, 2vw, 20px); /* Responsive base font size */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    margin: clamp(1em, 4vw, 2em) 0;
+    color: #2d3436;
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(1em, 3vw, 2.5em);
+    padding: clamp(1em, 3vw, 2em);
+    margin: auto;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: clamp(16px, 3vw, 24px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    padding: 0;
+    text-align: center;
+    width: clamp(280px, calc(100% - 2rem), 320px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.container .card .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: clamp(1.5em, 3vw, 2em);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.container .card .image {
+    width: 100%;
+    height: clamp(180px, 30vw, 220px);
+    overflow: hidden;
+    border-radius: clamp(16px, 3vw, 24px) clamp(16px, 3vw, 24px) 0 0;
+    position: relative;
+    filter: brightness(0.8);
+}
+
+.container .card .image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* adjust the opacity value to your liking */
+  }
+
+.container .card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+}
+
+.card:hover .image img {
+    transform: scale(1.1);
+}
+
+.container .card .profile-image {
+    width: clamp(120px, 25vw, 160px);
+    height: clamp(120px, 25vw, 160px);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: clamp(-60px, -12vw, -80px) auto 0;
+    border: clamp(4px, 1vw, 6px) solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+
+.container .card .profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .name {
+    margin: clamp(1em, 3vw, 1.5em) 0 0;
+    padding: 0 1em;
+}
+
+.container .card .name .child {
+    margin: 0.5em 0;
+    font-size: clamp(1.1em, 3vw, 1.4em);
+    font-weight: 700;
+    color: #2d3436;
+    transition: color 0.3s ease;
+}
+
+.container .card .date {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(0.8em, 2vw, 1.5em);
+    margin: clamp(1em, 3vw, 1.75em) 0.5em clamp(1.5em, 3vw, 2em);
+    padding: 0 0.5em;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.button-wrapper {
+    margin-top: auto; /* Pushes the button to the bottom */
+    padding-bottom: clamp(1.5em, 3vw, 2em);
+}
+
+.container .card .contact-btn {
+    margin: 0 auto clamp(1.5em, 3vw, 2em);
+    padding: clamp(0.8em, 2vw, 1em) clamp(2em, 4vw, 2.5em);
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    border: none;
+    border-radius: clamp(8px, 2vw, 12px);
+    font-size: clamp(0.9em, 2vw, 1em);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.container .card .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.25);
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+}
+
+.container .card .contact-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+}
+
+.container .card .date .child {
+    background-color: #f8f9fa;
+    color: #2d3436;
+    border-radius: clamp(8px, 2vw, 12px);
+    padding: clamp(0.6em, 2vw, 0.8em) clamp(0.8em, 2vw, 1.2em);
+    font-size: clamp(0.8em, 2vw, 0.9em);
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.8em;
+        gap: 1.2em;
+    }
+    
+    .card {
+        margin: 0 auto;
+    }
+    
+    .container .card .date {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8em;
+    }
+    
+    .container .card .date .child {
+        width: 80%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 1em;
+        gap: 1.5em;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 1.5em;
+        gap: 2em;
+    }
+}
+
+/* For landscape orientation on mobile devices */
+@media (max-height: 480px) and (orientation: landscape) {
+    .container {
+        padding: 0.5em;
+    }
+    
+    .card {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .container .card .image {
+        height: 150px;
+    }
+    
+    .container .card .profile-image {
+        width: 100px;
+        height: 100px;
+        margin: -50px auto 0;
+    }
+
+    
+}
+
+/* High-resolution screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+    }
+    
+    .card {
+        background-color: #2d2d2d;
+    }
+    
+    .container .card .name .child {
+        color: #ffffff;
+    }
+    
+    .container .card .date .child {
+        background-color: #3d3d3d;
+        color: #ffffff;
+    }
+}
